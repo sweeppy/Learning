@@ -9,7 +9,7 @@ class Solution
 {
     }
     /// <summary>
-    /// Записывает данный переданные пользователем в файл
+    /// Записывает данные переданные пользователем в файл
     /// </summary>
     static void WritingInfo() 
     {
@@ -43,10 +43,10 @@ class Solution
         FileInfo fileInfo = new FileInfo(@"e:\workersFile.txt");
 
         information[0] = Convert.ToString(count);             /*ID клиента*/
-        information[1] = fileInfo.LastWriteTime.ToString();   /*Время добавлеия информации*/
+        information[1] = fileInfo.LastWriteTime.ToString();   /*Время добавления информации*/
         information[2] = fullName;                            /*Ф.И.О. работника*/
         information[3] = age.ToString();                      /*Возраст работника*/
-        information[4] = height.ToString();                   /*Росто работника*/
+        information[4] = height.ToString();                   /*Рост работника*/
         information[5] = dateOfBirthday;                      /*Дата рождения работника*/
         information[6] = $"город {placeOfBirthday}";          /*Место рождения работника*/
         using (StreamWriter sw = new StreamWriter(@"e:\workersFile.txt", true))
