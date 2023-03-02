@@ -7,12 +7,6 @@ using System.Threading.Tasks;
 
 class Solution
 {
-    static void CheckReadLine(bool condition)
-    {
-        if (condition == false)
-        {
-
-        }
     }
     /// <summary>
     /// Записывает данный переданные пользователем в файл
