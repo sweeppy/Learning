@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,115 +8,107 @@ namespace Skill7
 {
     class Solution
     {
-       
-        
-        static void Main()
+        /// <summary>
+        /// Метод сортировки и вывода в консоль сотрудников по выбранному пункту
+        /// </summary>
+        public static void Sort(Repository repository)
         {
-            Repository repository = new Repository(@"e:\workersFile.txt");
-            string path = repository.path;
-            repository.CreationFile(path);
             IEnumerable<Worker> query = repository.workers.OrderBy(worker => worker.Id); ///для сортировки сотрудников
 
 
-            Console.WriteLine($"Ведите цифру для выполнения соответствующей команды" +
-                    $"\n 1:Вывести всех работников в консоль и при желании отсортировать данные" +
-                    $"\n 2:Вывести данные конкретного работника на экран" +
-                    $"\n 3:Создать новую запись" +
-                    $"\n 4:Удаление записи" +
-                    $"\n 5:Вывести записи в выбранном диапазоне дат");
-            
+            bool bl = int.TryParse(Console.ReadLine(), out var onetwo);
+            while (bl == false || onetwo > 2 || onetwo < 1)
+            {
+                Console.WriteLine($"Введено некоректное число, повторите ввод:");
+                bl = int.TryParse(Console.ReadLine(), out onetwo);
+            }
+            switch (onetwo) ///Выбор вывода: с сортировкой/без
+            {
+                case 1:
+                    Console.WriteLine($"Ведите цифру для выполнения соответствующей команды" +
+                        $"\n 1:Отсортировать по дате добавления файла" +
+                        $"\n 2:Отсортировать по ФИО" +
+                        $"\n 3:Отсортировать по возрасту" +
+                        $"\n 4:Отсортировать по росту" +
+                        $"\n 5:Отсортировать по дате рождения" +
+                        $"\n 6:Отсортировать по назанию города");
+                    bool ss = int.TryParse(Console.ReadLine(), out var sort);
+                    while (ss == false || sort > 6 || sort < 1)
+                    {
+                        Console.WriteLine($"Введено некоректное число, повторите ввод:");
+                        ss = int.TryParse(Console.ReadLine(), out sort);
+                    }
+                    switch (sort)
+                    {
+
+                        case 1:
+                            query = repository.workers.OrderBy(worker => worker.DateOfCreate);
+                            break;
+                        case 2:
+                            query = repository.workers.OrderBy(worker => worker.FIO);
+                            break;
+                        case 3:
+                            query = repository.workers.OrderBy(worker => worker.Age);
+                            break;                                                                      ///сортировка в соответсвии с пунктом
+                        case 4:
+                            query = repository.workers.OrderBy(worker => worker.Height);
+                            break;
+                        case 5:
+                            query = repository.workers.OrderBy(worker => worker.DateOfBirthday);
+                            break;
+                        case 6:
+                            query = repository.workers.OrderBy(worker => worker.City);
+                            break;
+                    }
+                    foreach (var item in query)
+                    {
+                        if (item.Id != 0)
+                        {
+                            Console.WriteLine(item.Print());                        ///вывод отсортированных данных в консоль
+                        }
+
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < repository.index; i++)
+                    {
+                        Console.WriteLine(repository.workers[i].Print());           ///вывод без сортировки
+                    }
+                    break;
+            }
+        }
+        public static void AllCommands(Repository repository,string path)
+        {
             bool success = int.TryParse(Console.ReadLine(), out var result);
             while (success == false || result > 5 || result < 1)
             {
                 Console.WriteLine($"Введено некоректное число, повторите ввод:");
-                success = int.TryParse(Console.ReadLine(),out result);
+                success = int.TryParse(Console.ReadLine(), out result);
             }
             switch (result)
             {
-               case 1:///вывод всех сотрудников
+                case 1:///вывод всех сотрудников
                     repository.GetAllWorkers();
                     Console.WriteLine($"Желаете ли отсортировать данные?" +
                         $"\n введите 1 для выбора критерия для сортировки" +
                         $"\n введите 2 для вывода всех сотрудников");
-                    bool bl = int.TryParse(Console.ReadLine(), out var onetwo);
-                    while (bl == false || result > 2 || result < 1)
-                    {
-                        Console.WriteLine($"Введено некоректное число, повторите ввод:");
-                        bl = int.TryParse(Console.ReadLine(), out onetwo);
-                    }
-                    
-                    switch(onetwo) ///Выбор вывода: с сортировкой/без
-                    {
-                        case 1:
-                            Console.WriteLine($"Ведите цифру для выполнения соответствующей команды" +
-                                $"\n 1:Отсортировать по дате добавления файла" +
-                                $"\n 2:Отсортировать по ФИО" +
-                                $"\n 3:Отсортировать по возрасту" +
-                                $"\n 4:Отсортировать по росту" +
-                                $"\n 5:Отсортировать по дате рождения" +
-                                $"\n 6:Отсортировать по назанию города");
-                            bool ss = int.TryParse(Console.ReadLine(), out var sort);
-                            while (ss == false || result > 6 || sort < 1)
-                            {
-                                Console.WriteLine($"Введено некоректное число, повторите ввод:");
-                                ss = int.TryParse(Console.ReadLine(), out sort);
-                            }
-                            switch (sort)
-                            {
-                                
-                                case 1:
-                                    query = repository.workers.OrderBy(worker => worker.DateOfCreate);
-                                    break;
-                                case 2:
-                                    query = repository.workers.OrderBy(worker => worker.FIO);
-                                    break;
-                                case 3:
-                                    query = repository.workers.OrderBy(worker => worker.Age);
-                                    break;                                                                      ///сортировка в соответсвии с пунктом
-                                case 4:
-                                    query = repository.workers.OrderBy(worker => worker.Height);
-                                    break;
-                                case 5:
-                                    query = repository.workers.OrderBy(worker => worker.DateOfBirthday);
-                                    break;
-                                case 6:
-                                    query = repository.workers.OrderBy(worker => worker.City);
-                                    break;
-                            }
-                            foreach (var item in query)
-                            {
-                                if (item.Id != 0)
-                                {
-                                    Console.WriteLine(item.Print());                        ///вывод отсортированных данных в консоль
-                                }
-
-                            }
-                            break;
-                        case 2:
-                            for (int i = 0; i < repository.index; i++)
-                            {
-                                Console.WriteLine(repository.workers[i].Print());           ///вывод без сортировки
-                            }
-                            break;
-                    }
-
-                        
+                    Sort(repository);
                     break;
-               case 2:///вывод конкретного сотрудника
+                case 2:///вывод конкретного сотрудника
                     repository.GetAllWorkers();
                     Console.WriteLine("Ведите ID сотрудника");
-                        bool suc = int.TryParse(Console.ReadLine(), out var res);
-                        while (suc == false || res > repository.index)
-                        {
-                            Console.WriteLine($"Такого сотрудника нет, повторите попытку");
-                            suc = int.TryParse(Console.ReadLine(), out res);
-                        }
+                    bool suc = int.TryParse(Console.ReadLine(), out var res);
+                    while (suc == false || res > repository.index)
+                    {
+                        Console.WriteLine($"Такого сотрудника нет, повторите попытку");
+                        suc = int.TryParse(Console.ReadLine(), out res);
+                    }
                     Console.WriteLine(repository.GetWorkerById(res).Print());
                     break;
-               case 3:///добавление новой записи
+                case 3:///добавление новой записи
                     repository.GetAllWorkers();
                     int id = repository.index + 1; ///установка ID рабочего
-                    
+
 
                     DateTime timeOfCreate = DateTime.Now; ///установка времени создания записи
 
@@ -150,7 +142,7 @@ namespace Skill7
                     Console.WriteLine($"Введите место рождения:");///установка места рождения
                     string placeOfBirthday = Console.ReadLine();
 
-                    repository.AddWorker(new Worker (id, timeOfCreate, FIO, age, height, dateOfBirthday, placeOfBirthday));///добавление нового рабочего в список
+                    repository.AddWorker(new Worker(id, timeOfCreate, FIO, age, height, dateOfBirthday, placeOfBirthday));///добавление нового рабочего в список
 
                     using (StreamWriter sw = new StreamWriter(path, true)) ///запись рабочего в файл
                     {
@@ -189,6 +181,22 @@ namespace Skill7
                     repository.GetWorkersBetweenTwoDates(datefrom, dateto);
                     break;
             }
+        }
+
+        static void Main()
+        {
+            Repository repository = new Repository(@"e:\workersFile.txt");
+            string path = repository.path;
+            repository.CreationFile(path);
+
+
+            Console.WriteLine($"Ведите цифру для выполнения соответствующей команды" +
+                    $"\n 1:Вывести всех работников в консоль и при желании отсортировать данные" +
+                    $"\n 2:Вывести данные конкретного работника на экран" +
+                    $"\n 3:Создать новую запись" +
+                    $"\n 4:Удаление записи" +
+                    $"\n 5:Вывести записи в выбранном диапазоне дат");
+            AllCommands(repository, path);  
         }
     }
 }
