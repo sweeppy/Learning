@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ea50cfa6-e5a5-41a6-8474-377801cff041": {
+      "ProjectGuid": "ea50cfa6-e5a5-41a6-8474-377801cff041",
+      "DisplayName": "Skill8",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "28166a7a-bf03-4e27-9906-366d1360fae4": {
+      "ProjectGuid": "28166a7a-bf03-4e27-9906-366d1360fae4",
+      "DisplayName": "Skill8_2",
+      "ColorIndex": 1
+    },
+    "ace9a7f3-c508-4ded-abc0-382e974b8e72": {
+      "ProjectGuid": "ace9a7f3-c508-4ded-abc0-382e974b8e72",
+      "DisplayName": "Skill8_3",
+      "ColorIndex": 2
+    },
+    "2874619e-41f0-4d2c-b68d-6b2b92d20483": {
+      "ProjectGuid": "2874619e-41f0-4d2c-b68d-6b2b92d20483",
+      "DisplayName": "Skill8_4",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

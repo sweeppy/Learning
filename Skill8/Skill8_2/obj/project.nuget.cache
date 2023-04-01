@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tAF+6vauBcjyd3SAnUH4UHM1udMaAFjVag0EHkZ0vMCqEMyNyGzQY4PjIWXBZUByTHDXTHyxglHsjelQu6G8HQ==",
+  "success": true,
+  "projectFilePath": "F:\\VS projects\\Learning\\Skill8\\Skill8_2\\Skill8_2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sweeppy\\.nuget\\packages\\microsoft.experimental.collections\\1.0.6-e190117-3\\microsoft.experimental.collections.1.0.6-e190117-3.nupkg.sha512",
+    "C:\\Users\\sweeppy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

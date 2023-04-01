@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <FIO>gggggggggggggggggg</FIO>
+    <Street>fffffffffffffff</Street>
+    <HouseNumber>77</HouseNumber>
+    <FlatNumber>88</FlatNumber>
+    <MobilePhone>12345678901</MobilePhone>
+    <FlatPhone>1234567</FlatPhone>
+  </User>
+  <User>
+    <FIO>idjsgnsdg jnsdgsd g jsdngsdjg</FIO>
+    <Street>ndsjugnsdg sdgjsngjsdg</Street>
+    <HouseNumber>12345</HouseNumber>
+    <FlatNumber>777777777</FlatNumber>
+    <MobilePhone>89965112135</MobilePhone>
+    <FlatPhone>7766553</FlatPhone>
+  </User>
+</ArrayOfUser>

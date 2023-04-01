@@ -1,0 +1,15 @@
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.csproj.AssemblyReference.cache
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.GeneratedMSBuildEditorConfig.editorconfig
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.AssemblyInfoInputs.cache
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.AssemblyInfo.cs
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.csproj.CoreCompileInputs.cache
+F:\VS projects\Learning\Skill8\Skill8\bin\Debug\net6.0\Skill8.exe
+F:\VS projects\Learning\Skill8\Skill8\bin\Debug\net6.0\Skill8.deps.json
+F:\VS projects\Learning\Skill8\Skill8\bin\Debug\net6.0\Skill8.runtimeconfig.json
+F:\VS projects\Learning\Skill8\Skill8\bin\Debug\net6.0\Skill8.dll
+F:\VS projects\Learning\Skill8\Skill8\bin\Debug\net6.0\ref\Skill8.dll
+F:\VS projects\Learning\Skill8\Skill8\bin\Debug\net6.0\Skill8.pdb
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.dll
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\ref\Skill8.dll
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.pdb
+F:\VS projects\Learning\Skill8\Skill8\obj\Debug\net6.0\Skill8.genruntimeconfig.cache
