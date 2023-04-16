@@ -1,0 +1,84 @@
+﻿<Window x:Class="Skill_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skill_9"
+        mc:Ignorable="d"
+        MinHeight="500"
+        MinWidth="850"
+        MaxHeight="500"
+        MaxWidth="850"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="InputText"
+                 HorizontalAlignment="Left"
+                 Margin="25,50,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 VerticalAlignment="Top"
+                 Width="279"
+                 Height="362"
+                 FontSize="22"
+                 Background="Bisque"/>
+
+        <Button x:Name="FirstCommandButton" Margin="328,332,356,41" PreviewMouseLeftButtonUp="FirstCommandButton_PreviewMouseLeftButtonUp">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="WhiteSmoke"></Ellipse>
+
+                        <TextBlock Text="1st method"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="23"
+                                   Height="28"
+                                   Width="117" Foreground="Black">
+                        </TextBlock>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="SecondCommandButton" Margin="522,332,164,41" PreviewMouseLeftButtonUp="SecondCommandButton_PreviewMouseLeftButtonUp">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="WhiteSmoke"/>
+
+                        <TextBlock Text="2nd method"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="23"
+                            Height="28"
+                            Width="130"
+                            Foreground="Black">
+                        </TextBlock>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock 
+            Margin="25,10,467,389"
+            Text="Введите предложение в рамку снизу:"
+            FontSize="20"
+        />
+        <ListBox x:Name="listOfSplitedSentence"
+                 Margin="321,53,349,181"
+                 Height="250"
+                 Width="180"
+                 Background="AliceBlue">
+        </ListBox>
+        <Label x:Name="labelOfSplitedSenence"
+               Margin="510,53,152,181"
+               Height="250"
+               Width="180"
+               Background="AliceBlue"
+               FontSize="14"
+               >
+
+        </Label>
+
+
+    </Grid>
+</Window>
