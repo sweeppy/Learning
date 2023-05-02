@@ -1,0 +1,17 @@
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\Skill_10_Task1.exe
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\Skill_10_Task1.deps.json
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\Skill_10_Task1.runtimeconfig.json
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\Skill_10_Task1.dll
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\ref\Skill_10_Task1.dll
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\Skill_10_Task1.pdb
+F:\VS projects\Learning\Skill_10\Skill_10\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.csproj.AssemblyReference.cache
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.GeneratedMSBuildEditorConfig.editorconfig
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.AssemblyInfoInputs.cache
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.AssemblyInfo.cs
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.csproj.CoreCompileInputs.cache
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.csproj.CopyComplete
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.dll
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\ref\Skill_10_Task1.dll
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.pdb
+F:\VS projects\Learning\Skill_10\Skill_10\obj\Debug\net6.0\Skill_10_Task1.genruntimeconfig.cache

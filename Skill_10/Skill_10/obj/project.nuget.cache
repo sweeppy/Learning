@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "nRy71usrATR3eMyFxDhrCvsA2Rt5llY4vaMZYDyxAhEQn34tSqas9fRHEY4EKKjSICKpPnwNs8Lf46gV58uM/Q==",
+  "success": true,
+  "projectFilePath": "F:\\VS projects\\Learning\\Skill_10\\Skill_10\\Skill_10_Task1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sweeppy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
