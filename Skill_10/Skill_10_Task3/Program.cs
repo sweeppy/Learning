@@ -26,11 +26,15 @@ namespace BankProgram_ver3
             {
                 case 1:
                     whoChanging = "Менеджером";             //Вход для менеджера
-                    new Manager().MainLogic(whoChanging);
+                    //new Manager().MainLogic(whoChanging);
+                    Employer manager = new Manager();
+                    manager.Main(whoChanging);
                     break;
                 case 2:
                     whoChanging = "Консультантом";          //Вход для консультанта
-                    new Consultant().Main(whoChanging);
+                    //new Consultant().Main(whoChanging);
+                    Employer consultant = new Consultant();
+                    consultant.Main(whoChanging);
                     break;
             }
 

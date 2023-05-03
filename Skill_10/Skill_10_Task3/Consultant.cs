@@ -9,124 +9,52 @@ using Newtonsoft.Json;
 
 namespace BankProgram_ver3
 {
-    
-    class Consultant : ChangeInfoOfClient
+
+    class Consultant : Employer
     {
-        string path = "clients_Task3.json"; //Название файла для сохранения в Json
-        List<Client> clients = new List<Client>();
-        public void Main(string whoChanging)
+        
+        public override void WhatToDoWithList(string whoChanging)
         {
-
-            Consultant consultant = new Consultant();
-
-            Console.WriteLine("Хотите заполнить список рандомными клиентами?" +
-                "\n 1)Да" +
-                "\n 2)Нет");
-
-            bool success = int.TryParse(Console.ReadLine(), out var number);
-            while (!success || number < 1 || number > 2)
-            {
-                Console.WriteLine("Введено некорректное число, повторите попытку:");
-                success = int.TryParse(Console.ReadLine(), out number);
-            }
-            switch (number)
-            {
-                case 1:
-                    GenerateRandomClients(consultant.clients, whoChanging);       //Заполнение списка рандомными клиентами
-                    GetInfo(consultant.clients);    //Вывод всех клиентов в консоль
-                    break;
-                case 2:
-                    GetInfo(consultant.clients);    //Вывод всех клиентов в консоль
-                    break;
-            }
-            ChangeInfo(clients , whoChanging); //Изменеие информации отдельного клиента
+            Console.WriteLine("Вам достуно только изменени номера телефона, нажмите лююую клавишу чтобы продолжить");
+            Console.ReadKey();
+            ChooseParamToChange(whoChanging);
+        }
+        public override void ChooseParamToChange(string whoChanging)
+        {
+            List<Client> clients = new List<Client>();
+            clients = TakeInfoFromJson(clients);
+            ChangePhoneNumber(clients, whoChanging);
+            SaveToJson(clients);
         }
         /// <summary>
-        /// Возвращает количество рандомных клиентов, которые в последствии будут созданы
-        /// </summary>
-        /// <returns></returns>
-        public int SuccessOfRandomClients()
-        {
-
-            bool succes = int.TryParse(Console.ReadLine(), out var numOfRandClients);
-            while (!succes || numOfRandClients <= 0)
-            {
-                Console.WriteLine("Введено некорректное число, повторите попытку:");
-                succes = int.TryParse(Console.ReadLine(), out numOfRandClients);
-            }
-            return numOfRandClients;
-        }
-        /// <summary>
-        /// Создание рандомных клиентов
+        /// Изменение номера клиента
         /// </summary>
         /// <param name="clients"></param>
         /// <param name="whoChanging"></param>
-        public void GenerateRandomClients(List<Client> clients, string whoChanging)
+        public void ChangePhoneNumber(List<Client> clients, string whoChanging)
         {
+            string showForRequest = "номер телефона";
+            string phoneNumber = TakeInfOfClientToChange(showForRequest);
+            bool successOfChanging = false;
 
-            Consultant consultant = new Consultant();
-
-            Console.WriteLine("Введите количество рандомных клиентов для заполнения списка:");
-            int temp = SuccessOfRandomClients();
-            clients = TakeInfoFromJson(clients);
-            string s = "";
-            for (int i = 0; i < temp; i++)
+            foreach (var item in clients)
             {
-                Client client = new Client(whoChanging);
-                clients.Add(client);
-            }
-
-            SaveToJson(clients);//сохранение клиентов в Json
-        }
-        /// <summary>
-        /// Вывод клиентов в консоль
-        /// </summary>
-        /// <param name="tempList"></param>
-        public void GetInfo(List<Client> tempList)
-        {
-            Consultant consultant = new Consultant();
-            if (File.Exists(consultant.path))
-            {
-                string jsonInf = File.ReadAllText(consultant.path);
-                tempList = JsonConvert.DeserializeObject<List<Client>>(jsonInf);
-                int index = 1;
-                foreach (var item in tempList)
+                if (item.PhoneNumber == phoneNumber)
                 {
-                    Console.WriteLine(item.Print(tempList, index));
-                    index++;
+                    Console.WriteLine("Введите новый номер телефона:");
+                    string tempPhoneNumber = Console.ReadLine();
+                    item.PhoneNumber = tempPhoneNumber;
+                    item.TypeOfChanging = "Изменение";
+                    item.WhoChanged = whoChanging;
+                    item.DateOfChange = DateTime.Now;
+                    successOfChanging = true;
+                    break;
                 }
             }
+            if (successOfChanging)
+                Console.WriteLine("Номер телефона был успешно изменен!");
             else
-                Console.WriteLine("В списке нет ни одной записи");
+                Console.WriteLine("Клиента с данным номером телефона не было найдено");
         }
-
-        /// <summary>
-        /// Метод сохранения списка клиентов в Json
-        /// </summary>
-        /// <param name="clients">Список клиентов, который нужно сохранить</param>
-        public void SaveToJson(List<Client> clients)
-        {
-            Consultant consultant = new Consultant();
-            string jsonSer;
-            jsonSer = JsonConvert.SerializeObject(clients);
-            File.WriteAllText(consultant.path, jsonSer);
-        }
-        /// <summary>
-        /// Возвращает лист с клиентами из файла Json, если он есть
-        /// </summary>
-        /// <param name="clients"></param>
-        /// <returns></returns>
-        public List<Client> TakeInfoFromJson(List<Client> clients)
-        {
-            Consultant consultant = new Consultant();
-            if (File.Exists(consultant.path))
-            {
-                string jsonInf = File.ReadAllText(consultant.path);
-                clients = JsonConvert.DeserializeObject<List<Client>>(jsonInf);
-            }
-            return clients;
-        }
-        
     }
-
 }

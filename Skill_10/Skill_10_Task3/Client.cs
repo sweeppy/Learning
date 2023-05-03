@@ -16,7 +16,7 @@ namespace BankProgram_ver3
         {
             names = new List<string>();
         }
-        Random random = new Random();
+        Random random = new Random();   
 
         /// <summary>
         /// Фамилия
