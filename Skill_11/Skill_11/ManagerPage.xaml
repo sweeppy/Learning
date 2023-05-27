@@ -1,0 +1,185 @@
+﻿<Page x:Class="Skill_11.ManagerPage"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                      xmlns:local="clr-namespace:Skill_11"
+                      mc:Ignorable="d" 
+                      d:DesignHeight="900" d:DesignWidth="1600"
+                      Title="Manager">
+
+                    <Grid Background="DarkSlateGray">
+                        <ListView x:Name="ListViewClients" Margin="397,32,32,39" >
+                            <ListView.Resources>
+                                <ContextMenu x:Key="ItemContextMenu" >
+                                    <MenuItem x:Name="menu1"
+                                              Header="Изменить имя клиента"
+                                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                                    <MenuItem x:Name="menu2"
+                              Header="Изменить фамилию клиента"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                    <MenuItem x:Name="menu3"
+                              Header="Изменить отчество клиента"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                    <MenuItem x:Name="menu4"
+                              Header="Изменить номер телефона клиента"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                    <MenuItem x:Name="menu5"
+                              Header="Изменить серию паспорта клиента"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                    <MenuItem x:Name="menu6"
+                              Header="Изменить номер паспорта клиента"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                    <MenuItem x:Name="menu7"
+                              Header="Изменить департамент клиента"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"/>
+                    <Separator/>
+                    <MenuItem Header="Удалить пользователя"
+                              PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown"
+                              />
+                    <MenuItem x:Name="menu8"
+                              Header="Удалить департамент"
+                              PreviewMouseLeftButtonDown="menu7_PreviewMouseLeftButtonDown"/>
+                </ContextMenu>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style      TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="LastName"
+                                                  Click="GridViewColumnHeader_Click">LastName</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="FirstName"
+                                                  Click="GridViewColumnHeader_Click">LastName</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Patronymic"
+                                                  Click="GridViewColumnHeader_Click">Patronymic</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneNumber}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PhoneNumber"
+                                                  Click="GridViewColumnHeader_Click">PhoneNumber</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PassportSeries}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PassportSeries"
+                                                  Click="GridViewColumnHeader_Click">PassportSeries</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding PassportID}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PassportID"
+                                                  Click="GridViewColumnHeader_Click">PassportID</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding DateOfChange}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="DateOfChange"
+                                                  Click="GridViewColumnHeader_Click">DateOfChange</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding InformationThatChanged}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="InformationThatChanged"
+                                                  Click="GridViewColumnHeader_Click">InformationThatChanged</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding WhoChanged}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="WhoChanged"
+                                                  Click="GridViewColumnHeader_Click">WhoChanged</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding TypeOfChanging}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="TypeOfChanging"
+                                                  Click="GridViewColumnHeader_Click">TypeOfChanging</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Margin="0,54,1208,10">
+            <ComboBox x:Name="CbDepartments"
+                      Margin="20"
+                      SelectionChanged="CbDepartments_SelectionChanged"
+                      Height="28">
+            </ComboBox>
+
+            <Button x:Name ="AddClientBtn"
+                Height="42"
+                Margin="20, 20, 20, 20" PreviewMouseLeftButtonUp="AddClient_PreviewMouseLeftButtonUp" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="Wheat"/>
+                            <TextBlock Text = "Добавить нового клиента"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                FontSize="23"
+                                TextWrapping="Wrap"
+                                TextAlignment="Center" FontFamily="Elephant"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name ="AddDepartment"
+                    Height="42"
+                    Margin="20, 0, 20, 20" PreviewMouseLeftButtonUp="AddDepartment_PreviewMouseLeftButtonUp"
+                 >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="Wheat"/>
+                            <TextBlock Text = "Добавить новый департамент"    
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                FontSize="23"
+                                TextWrapping="Wrap"
+                                TextAlignment="Center"
+                                />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button x:Name ="AddRandomClients"
+                    Margin="20, 500, 20, 20"
+                    Height="62"
+                    PreviewMouseLeftButtonUp="AddRandomClients_PreviewMouseLeftButtonUp"
+                    >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="Wheat"/>
+                            <TextBlock Text = "Добавить два рандомных клиента в департамент"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontSize="23"
+                                       TextWrapping="Wrap"
+                                       TextAlignment="Center" FontFamily="Elephant"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+        </StackPanel>
+    </Grid>
+</Page>
