@@ -1,0 +1,158 @@
+﻿<Window x:Class="Skill_12.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skill_12"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        MinHeight="900" 
+        MinWidth="1600"
+        MaxHeight="900"
+        MaxWidth="1600"
+        >
+        
+    <Grid Background="DarkSlateGray">
+        
+        <ListView x:Name="ListViewClients" Margin="397, 32, 32, 39" ContextMenuOpening="ListViewClients_ContextMenuOpening" >
+            <ListView.Resources>
+                <ContextMenu x:Key="LVContextMenu">
+                    <MenuItem Header="Перевести средства на другой счет"
+                              Click="MenuItem_Click_Transfer"/>
+                    <MenuItem Header="Не депозитный счет" IsCheckable="True" Click="MenuItem_Click"/>
+                    <MenuItem Header="Депозитный счет" IsCheckable="True" Click="MenuItem_Click_1"/>
+                </ContextMenu>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ContextMenu" Value="{StaticResource LVContextMenu}"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="LastName"
+                                                  Click="GridViewColumnHeader_Click">LastName</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="FirstName"
+                                                  Click="GridViewColumnHeader_Click">FirstName</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        </GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Patronymic"
+                                                  Click="GridViewColumnHeader_Click">Patronymic</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneNumber}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PhoneNumber"
+                                                  Click="GridViewColumnHeader_Click">PhoneNumber</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding PassportSeries}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PassportSeries"
+                                                  Click="GridViewColumnHeader_Click">PassportSeries</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding PassportID}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PassportID"
+                                                  Click="GridViewColumnHeader_Click">PassportID</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding NonDepositMoney.Balance}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="AccountA"
+                                                  Click="GridViewColumnHeader_Click">NotDepositMoney</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding DepositMoney.Balance}">
+                        <GridViewColumn.Header >
+                            <GridViewColumnHeader Tag="AccountB"
+                                                  Click="GridViewColumnHeader_Click">DepositMoney</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding DateOfCreate}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="DateOfCreate"
+                                                  Click="GridViewColumnHeader_Click">DateOfCreate</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Account}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Account"
+                                                  Click="GridViewColumnHeader_Click">Account</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Margin="0,54,1208,10">
+            <ComboBox x:Name="CbDepartments"
+                      Margin="20"
+                      Height="28" SelectionChanged="CbDepartments_SelectionChanged">
+            </ComboBox>
+
+            <Button x:Name ="AddClientBtn"
+                Height="42"
+                Margin="20, 20, 20, 20"
+                PreviewMouseLeftButtonUp="AddClient_PreviewMouseLeftButtonUp" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Fill="Wheat"/>
+                            <TextBlock Text = "Добавить нового клиента"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                FontSize="23"
+                                TextWrapping="Wrap"
+                                TextAlignment="Center"
+                                FontFamily="Elephant"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            
+            <Button x:Name="DepositBtn"
+                    Height="42"
+                    Margin="20, 20, 20, 20"
+                    PreviewMouseLeftButtonUp="DepositBtn_PreviewMouseLeftButtonUp"
+                    >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Rectangle Fill="Wheat"/>
+                            <TextBlock Text = "Пополнить счет клиента"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                FontSize="23"
+                                TextWrapping="Wrap"
+                                TextAlignment="Center"
+                                FontFamily="Elephant"/>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            </StackPanel>
+    </Grid>
+</Window>

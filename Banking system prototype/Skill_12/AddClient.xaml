@@ -1,0 +1,136 @@
+﻿<Window x:Class="Skill_12.AddClient"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skill_12"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="AddClient" Height="740" Width="430" Closing="Window_Closing">
+    <Window.Resources>
+        <sys:Double x:Key="FontSizeText">20</sys:Double>
+        <sys:Double x:Key="Height">25</sys:Double>
+    </Window.Resources>
+    <Grid Background="DarkSlateGray">
+        <StackPanel>
+            <TextBlock Margin="20, 5, 20, 15"
+                       Height="{StaticResource Height}"  Text="Введите имя клиента:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBox x:Name="TbFirstName"
+                     Width="390"
+                     Height="{StaticResource Height}"
+                     Margin="20,-10,20,15"
+                     Background="WhiteSmoke"
+                     FontSize="{StaticResource FontSizeText}"/>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Введите фамилию клиента:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBox x:Name="TbLastName"
+                     Width="390"
+                     Height="{StaticResource Height}"
+                     Margin="20,-10,20,20"
+                     Background="WhiteSmoke"
+                     FontSize="{StaticResource FontSizeText}"/>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Введите отчество клиента:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBox x:Name="TbPatrynomic"
+                     Width="390"
+                     Height="{StaticResource Height}"
+                     Margin="20,-10,20,15"
+                     Background="WhiteSmoke"
+                     FontSize="{StaticResource FontSizeText}"/>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Введите номер телефона клиента:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBox x:Name="TbPhoneNumber"
+                     Height="{StaticResource Height}"
+                     Margin="20,-10,20,15"
+                     Background="WhiteSmoke"
+                     FontSize="{StaticResource FontSizeText}"/>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Введите серию паспорта клиента:" 
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBox x:Name="TbPassportSeries"
+                       Height="{StaticResource Height}"
+                       Margin="20,-10,20,15"
+                       Background="WhiteSmoke"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Введите номер паспорта клиента:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <TextBox x:Name="TbPassportID"
+                     Width="390"
+                     Height="{StaticResource Height}"
+                     Margin="20,-10,20,15"
+                     Background="WhiteSmoke"
+                     FontSize="{StaticResource FontSizeText}"/>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Выберите тип счета:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <ComboBox x:Name="CbTypeOfAccount"
+                      Margin="20, 0, 20, 15"
+                      Height="30"
+                      Background="Wheat"
+                      FontSize="15">
+                <ComboBoxItem Content="Депозитный"/>
+                <ComboBoxItem Content="Не депозитный"/>
+            </ComboBox>
+            <TextBlock Margin="20, 0, 20, 15"
+                       Height="{StaticResource Height}"
+                       Text="Выберете статус клиента:"
+                       Background="Wheat"
+                       FontSize="{StaticResource FontSizeText}"/>
+            <ComboBox x:Name="Status"
+                      Margin="20, 0, 20, 15"
+                      Height="30"
+                      Background="Wheat"
+                      FontSize="15"
+                      >
+                <ComboBoxItem Content="Обычные клиенты"/>
+                <ComboBoxItem Content="VIP клиенты"/>
+                <ComboBoxItem Content="Юридические лица"/>
+            </ComboBox>
+
+        </StackPanel>
+        <Button x:Name="Finish"
+                FontFamily="Comic Sans MS"
+                Margin="10,614,10,10" PreviewMouseLeftButtonUp="Finish_PreviewMouseLeftButtonUp">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Grid Margin="0,-20,0,0">
+                        <Border Background="Transparent" BorderThickness="3" BorderBrush="#FFABADB3" CornerRadius="3">
+                            <Rectangle Fill="Wheat"/>
+                        </Border>
+
+                        <TextBlock
+                            Text="Подтвердить"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="30"
+                            FontFamily="Comic Sans MS"
+                            FontWeight="Bold"
+                            Foreground="White" Width="210"
+                            TextAlignment="Center"/>
+
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
+

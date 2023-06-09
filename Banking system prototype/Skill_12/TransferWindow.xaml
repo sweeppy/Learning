@@ -1,0 +1,81 @@
+﻿<Window x:Class="Skill_12.TransferWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Skill_12"
+        mc:Ignorable="d"
+        Title="TransferWindow"
+                               MinHeight="330" MinWidth="300" Closing="Window_Closing"
+                               MaxHeight="330" MaxWidth="300">
+    <Window.Resources>
+        <FontFamily x:Key="font">Comic Sans MS</FontFamily>
+    </Window.Resources>
+    <Grid Background="SlateGray">
+        <StackPanel>
+            <TextBlock Text="Выберите тип счета, с которого хотите осуществить перевод"
+                       Margin="5"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       FontFamily="{StaticResource font}"/>
+            
+            <ComboBox x:Name="CbFromAccount"
+                      Margin="5">
+                <ComboBoxItem Content="Депозитный" FontFamily="{StaticResource font}"/>
+                <ComboBoxItem Content="Не депозитный" FontFamily="{StaticResource font}"/>
+            </ComboBox>
+
+            <TextBlock Text="Выберите тип счета, на который хотите осуществить перевод"
+                       Margin="5"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       FontFamily="{StaticResource font}"/>
+
+            <ComboBox x:Name="CbToAccount"
+                      Margin="5">
+                <ComboBoxItem Content="Депозитный" FontFamily="{StaticResource font}"/>
+                <ComboBoxItem Content="Не депозитный" FontFamily="{StaticResource font}"/>
+            </ComboBox>
+
+            <TextBox x:Name="TboxPhoneNumberForTransfer"
+                     MouseEnter="TboxPhoneNumberForTransfer_MouseEnter"
+                     Margin="5"
+                     Height="40"
+                     Background="#FFEBEBEB"
+                     Text="Введите номер телфона клиента, на счет которого хотите осуществить перевод"
+                     TextWrapping="Wrap"
+                     FontFamily="{StaticResource font}"
+                     TextAlignment="Center"/>
+
+            <TextBox x:Name="TbForMoney"
+                     MouseEnter="TbForMoney_MouseEnter"
+                     Margin="5"
+                     Height="25"
+                     Background="#FFEBEBEB"
+                     Text="Введите сумму перевода"
+                     FontFamily="{StaticResource font}"
+                     TextAlignment="Center"/>
+            
+            <Button x:Name="FinishBtn" Height="39" Margin="5" FontFamily="Comic Sans MS"
+                    Click="FinishBtn_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Border Background="Transparent" BorderThickness="3" BorderBrush="#FFABADB3" CornerRadius="3">
+                                <Rectangle Fill="#FFEBEBEB"/>
+                            </Border>
+                            <TextBlock Text="Подтвердить"
+                                       TextAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontFamily="{StaticResource font}"
+                                       />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
