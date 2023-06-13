@@ -1,0 +1,55 @@
+﻿<Window x:Class="Skill_12.ActivityWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Skill_12"
+        mc:Ignorable="d"
+        Title="ActivityWindow" MinHeight="800" MinWidth="1400"
+                               MaxHeight="800" MaxWidth="1400"
+        Background="Gray">
+
+    <Window.Resources>
+        <FontFamily x:Key="font">Arial Black</FontFamily>
+    </Window.Resources>
+    <Grid>
+        <ListBox x:Name="LbActivity"
+                  Background="Gray">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel  Orientation="Horizontal" Height="30">
+                        
+                        <TextBlock Text="TypeOfOpperation: " FontFamily="{StaticResource font}"/>
+                        
+                        <TextBlock Text="{Binding TypeOfOperation}"/>
+
+                        <TextBlock Text="Amount: " FontFamily="{StaticResource font}"/>
+                        
+                        <TextBlock Text="{Binding Amount}" TextAlignment="Center"/>
+
+                        <TextBlock Text="From: " FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding PhoneNumberFrom}" />
+                        <TextBlock Text="Счет:" FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding TypeOfAccountFrom}"/>
+                        <TextBlock Text="Client status: " FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding StatusFrom}"/>
+
+                        <TextBlock Text="To: " FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding PhoneNumberTo}"/>
+                        <TextBlock Text="Счет:" FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding TypeOfAccountTo}"/>
+                        <TextBlock Text="Client status: " FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding StatusTo}"/>
+                        
+                        
+                        <TextBlock Text="Date:" FontFamily="{StaticResource font}"/>
+                        <TextBlock Text="{Binding Date}"/>
+                        <TextBlock x:Name="WarningText" Text="{Binding Warning}" Background="red"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

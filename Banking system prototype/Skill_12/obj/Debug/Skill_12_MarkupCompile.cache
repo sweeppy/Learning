@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\VS projects\Learning\Skill_12\Skill_12\obj\Debug\
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\
 Skill_12
 none
 false
 DEBUG;TRACE
-F:\VS projects\Learning\Skill_12\Skill_12\App.xaml
-41212769007
+F:\VS projects\Learning\Banking system prototype\Skill_12\App.xaml
+5-1989328111
 
-1315694722
-14-80711717
-AddClient.xaml;DepositeWindow.xaml;MainWindow.xaml;TransferWindow.xaml;
+10-2054776106
+15-1939199555
+View\ActivityWindow.xaml;View\AddClient.xaml;View\DepositeWindow.xaml;View\MainWindow.xaml;View\TransferWindow.xaml;
 
 False
 

@@ -23,3 +23,32 @@ F:\VS projects\Learning\Skill_12\Skill_12\obj\Debug\TransferWindow.g.cs
 F:\VS projects\Learning\Skill_12\Skill_12\obj\Debug\TransferWindow.baml
 F:\VS projects\Learning\Skill_12\Skill_12\obj\Debug\DepositeWindow.g.cs
 F:\VS projects\Learning\Skill_12\Skill_12\obj\Debug\DepositeWindow.baml
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\Skill_12.exe.config
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\Skill_12.exe
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\Skill_12.pdb
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\Newtonsoft.Json.dll
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\Newtonsoft.Json.xml
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.csproj.AssemblyReference.cache
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.csproj.SuggestedBindingRedirects.cache
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12_MarkupCompile.cache
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12_MarkupCompile.lref
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.g.resources
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.Properties.Resources.resources
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.csproj.GenerateResource.cache
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.csproj.CoreCompileInputs.cache
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.csproj.CopyComplete
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.exe
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\Skill_12.pdb
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\AddClient.g.cs
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\DepositeWindow.g.cs
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\MainWindow.g.cs
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\TransferWindow.g.cs
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\AddClient.baml
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\DepositeWindow.baml
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\MainWindow.baml
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\TransferWindow.baml
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\App.g.cs
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\ActivityWindow.g.cs
+F:\VS projects\Learning\Banking system prototype\Skill_12\obj\Debug\View\ActivityWindow.baml
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\MainLogic.dll
+F:\VS projects\Learning\Banking system prototype\Skill_12\bin\Debug\MainLogic.pdb
