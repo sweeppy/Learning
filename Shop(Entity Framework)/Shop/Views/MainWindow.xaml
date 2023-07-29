@@ -1,0 +1,150 @@
+﻿<Window x:Class="Shop.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="800" MinWidth="1200"
+        MaxHeight="800" MaxWidth="1200">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Показать таблицу для печати"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid Background="Wheat">
+        <TabControl x:Name="TControl">
+            <TabItem x:Name="Main" PreviewMouseLeftButtonUp="Main_PreviewMouseLeftButtonUp">
+                <TabItem.Header>
+                    <TextBlock Style="{StaticResource TextBlockStyle}">Clients</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid Background="#FFFBD897">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <DataGrid x:Name="mainDataGrid"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  IsReadOnly="False"
+                  CellEditEnding="MainDataGrid_CellEditEnding"
+                  CanUserAddRows="False"
+                  Background="#FFF9D288">
+
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn x:Name="id"
+                                    Binding="{Binding id, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    IsReadOnly="True"/>
+
+                                <DataGridTextColumn
+                                    Binding="{Binding lastName, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="LastName"
+                                    />
+
+                                <DataGridTextColumn x:Name="firstName"
+                                    Binding="{Binding firstName, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="FirstName"/>
+
+                                <DataGridTextColumn x:Name="patronymic"
+                                    Binding="{Binding patronymic, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Patronymic"/>
+
+                                <DataGridTextColumn x:Name="phoneNumber"
+                                    Binding="{Binding phoneNumber, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="PhoneNumber"/>
+
+                                <DataGridTextColumn x:Name="email"
+                                    Binding="{Binding email, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Email"/>
+                            </DataGrid.Columns>
+
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Add" Click="MenuItemAddNote_Click"/>
+                                    <MenuItem Header="Delete" Click="MenuItemDelete_Click"/>
+                                    <MenuItem Header="CheckPurchases" Click="CheckPurchases_Click"/>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+
+                        </DataGrid>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            
+            
+            <TabItem x:Name="Second" PreviewMouseLeftButtonUp="Second_PreviewMouseLeftButtonUp">
+                <TabItem.Header>
+                    <TextBlock Style="{StaticResource TextBlockStyle}">Purchases</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid Background="#FFFBD897">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <DataGrid x:Name="SecondDataGrid"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding}"
+                  IsReadOnly="False"
+                  CellEditEnding="SecondDataGrid_CellEditEnding"
+                  CanUserAddRows ="False"
+                  Background="#FFF9D288">
+
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn x:Name="secondID"
+                                    Binding="{Binding id, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    IsReadOnly="True"/>
+
+                                <DataGridTextColumn x:Name="secondEmail"
+                                    Binding="{Binding email, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Email"/>
+
+                                <DataGridTextColumn x:Name="secondIdPurchas"
+                                                    Binding="{Binding idProduct, UpdateSourceTrigger=PropertyChanged}"
+                                                    Header="idProduct"/>
+
+                                <DataGridTextColumn x:Name="secondProductName"
+                                                    Binding="{Binding productName, UpdateSourceTrigger=PropertyChanged}"
+                                                    Header="productName"/>
+                            </DataGrid.Columns>
+
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Add" Click="MenuItemAddNoteToPurchases_Click"/>
+                                    <MenuItem Header="Delete" Click="MenuItemDeleteFromPurchases_Click"/>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+
+                        </DataGrid>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Window>
+
+                
