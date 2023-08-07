@@ -1,0 +1,22 @@
+﻿@using Notebook.Models;
+@model IEnumerable<Client>
+
+<h1>Short information about clients:</h1>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Patronymic</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td><a asp-action="GetInformation" asp-controller="HomeShort" asp-route-id="@item.Id">@item.Id</a></td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Patronymic</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background: silver;
+    font-family: 'Comic Sans MS' sans-serif;
+}
+
+header{
+    width: 100%;
+    padding: 15px 10%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    border-bottom: 2px solid #000;
+}
+
+
+.logo {
+    font-weight: 600;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+header nav a:hover{text-decoration: underline}
+main{
+    width: 80%;
+    padding: 15px, 10%;
+    margin: 50px, 0;
+}
+
+main label{
+    width: 100%;
+    margin-left: 20px;
+    margin-top:10px;
+    display:block;
+}
+main input:not([type="submit"]) {
+    width: 40%;
+    padding: 10px, 14px;
+    font-size: 14px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    outline: none;
+    margin-top: 7px;
+}
+    main input:not([type="submit"]):focus
+    {
+        border: 1px solid #ff0000;
+    }
+main input[type="submit"] {
+    width: 40%;
+    padding: 10px , 0;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 7px;
+    background: #ff6a00;
+    font-weight: bold;
+    color: #833904;
+    cursor: pointer;
+    margin-left: 20px;
+}
+a.my-link {
+    width: 40%;
+    text-decoration:none;
+    padding: 10px , 0;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 7px;
+    background: #ff6a00;
+    font-weight: bold;
+    color: #833904;
+    cursor: pointer;
+    margin-left: 20px;
+}
+main input[type="sybmit"]:hover{
+    background: #d96614;
+}
+main form span{
+    color: #ff0000;
+    font-weight: bold;
+    display:block;
+    margin: 5px;
+}
+

@@ -1,0 +1,25 @@
+﻿@using Notebook.Models;
+@model Client
+
+<h1>Information about concrete client:</h1>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Patronymic</th>
+        <th>PhoneNumber</th>
+        <th>Adress</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.LastName</td>
+        <td>@Model.Patronymic</td>
+        <td>@Model.PhoneNumber</td>
+        <td>@Model.Address</td>
+        <td>@Model.Description</td>
+    </tr>
+</table>

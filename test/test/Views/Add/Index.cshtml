@@ -1,0 +1,35 @@
+﻿@model Client
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add new note:</h1>
+
+<form method="post" asp-controller="Add" asp-action="Check">
+
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName"/>
+    <span asp-validation-for="FirstName"></span>
+
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName"/>
+    <span asp-validation-for="LastName"></span>
+
+    <label asp-for="Patronymic"></label>
+    <input asp-for="Patronymic"/>
+    <span asp-validation-for="Patronymic"></span>
+
+    <label asp-for="PhoneNumber"></label>
+    <input asp-for="PhoneNumber"/>
+    <span asp-validation-for="PhoneNumber"></span>
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address"/>
+    <span asp-validation-for="Address"></span>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description"/>
+    <span asp-validation-for="Description"></span>
+
+    <input type="submit" value="Add"/>
+</form>

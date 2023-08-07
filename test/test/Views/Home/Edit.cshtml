@@ -1,0 +1,42 @@
+﻿@model Notebook.Models.Client
+
+<h1>Edit Client</h1>
+<form asp-action="edit" asp-controller="Home" asp-route-id="Model.Id">
+    
+    @Html.Hidden("Id", Model.Id)
+
+    <p>
+        <label asp-for="FirstName">FirstName</label>
+        <input type="text" asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </p>
+    <p>
+        <label asp-for="LastName">LastName</label>
+        <input type="text" asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </p>
+    <p>
+        <label asp-for="Patronymic">Patronymic</label>
+        <input type="text" asp-for="Patronymic" />
+        <span asp-validation-for="Patronymic"></span>
+    </p>
+    <p>
+        <label asp-for="PhoneNumber"></label>
+        <input type="text" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+    </p>
+    <p>
+        <label asp-for="Address"></label>
+        <input type="text" asp-for="Address" />
+        <span asp-validation-for="Address"></span>
+    </p>
+    <p>
+        <label asp-for="Description"></label>
+        <input type="text" asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </p>
+    <p>
+        <input type="submit" value="Confirm" />
+    </p>
+
+</form>
