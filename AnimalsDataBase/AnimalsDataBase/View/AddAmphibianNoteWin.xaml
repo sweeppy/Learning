@@ -1,0 +1,84 @@
+﻿<Window x:Class="AnimalsDataBase.View.AddAmphibianNoteWin"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimalsDataBase.View"
+        mc:Ignorable="d"
+        Title="AddAmphibianNoteWin" Height="450" Width="500">
+
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Width" Value="218"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="AliceBlue"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid ShowGridLines="True" Background="#FFA1BBD2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="animal squad" Style="{StaticResource TextBlockStyle}" Grid.Row="0"/>
+        <TextBlock Text="animal family" Style="{StaticResource TextBlockStyle}" Grid.Row="1"/>
+        <TextBlock Text="animal genus" Style="{StaticResource TextBlockStyle}" Grid.Row="2"/>
+        <TextBlock Text="animal species" Style="{StaticResource TextBlockStyle}" Grid.Row="3"/>
+
+        <TextBox x:Name="animalSquad_TB" Style="{StaticResource TextBoxStyle}" Grid.Row="0"/>
+        <TextBox x:Name="animalFamily_TB" Style="{StaticResource TextBoxStyle}" Grid.Row="1"/>
+        <TextBox x:Name="animalGenus_TB" Style="{StaticResource TextBoxStyle}" Grid.Row="2"/>
+        <TextBox x:Name="animalSpecies_TB" Style="{StaticResource TextBoxStyle}" Grid.Row="3"/>
+
+
+        <Button x:Name="CancelBtn" Grid.Column="0" Grid.Row="4" Margin="13">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Border BorderBrush="Gray" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Text="Cancel" Style="{StaticResource TextBlockStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="ConfirmBtn" Grid.Column="1" Grid.Row="4" Margin="13">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Border BorderBrush="Gray" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Text="Confirm" Style="{StaticResource TextBlockStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

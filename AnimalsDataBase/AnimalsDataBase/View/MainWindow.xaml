@@ -1,0 +1,214 @@
+﻿<Window x:Class="AnimalsDataBase.View.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimalsDataBase"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="950" MinWidth="1500"
+                           MaxHeight="950" MaxWidth="1500">
+
+    <Window.Resources>
+        <Style x:Key="ColumnTextStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="TabControlTextStyle" TargetType="TabItem">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TabControl>
+            <TabItem Header="Amphibians" Style="{StaticResource TabControlTextStyle}">
+                <DataGrid x:Name="AmphibianDataGrid"
+                          ItemsSource="{Binding}"
+                          AutoGenerateColumns="False"
+                          Background="#FFC4E3FF"
+                          BorderBrush="#FFC4E3FF"
+                          CanUserAddRows="False"
+                          CellEditEnding="AmphibiansEditEnding">
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn x:Name="amphibiansId"
+                                    Binding="{Binding animalId, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="True">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="amphibiansClass"
+                                    Binding="{Binding animalClass, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalClass"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="True">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="amphibiansSquad"
+                                    Binding="{Binding animalSquad, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalSquad"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="amphibiansFamily"
+                                    Binding="{Binding animalFamily, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalFamily"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="amphibiansGenus"
+                                    Binding="{Binding animalGenus, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Genus"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="amphibiansSpecies"
+                                    Binding="{Binding animalSpecies, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalSpecies"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Add note" Click="AmphibianAdd_Click"/>
+                            <MenuItem Header="Delete note" Click="AmphibianDelete_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Birds" Style="{StaticResource TabControlTextStyle}">
+                <DataGrid x:Name="BirdDataGrid"
+                          CanUserAddRows="False"
+                          ItemsSource="{Binding}"
+                          AutoGenerateColumns="False"
+                          Background="#FFC4E3FF"
+                          BorderBrush="#FFC4E3FF"
+                          CellEditEnding="BirdsEditEnding">
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn x:Name="birdId"
+                                    Binding="{Binding animalId, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="True">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="birdClass"
+                                    Binding="{Binding animalClass, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalClass"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="True">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="birdSquad"
+                                    Binding="{Binding animalSquad, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalSquad"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="birdFamily"
+                                    Binding="{Binding animalFamily, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalFamily"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="birdGenus"
+                                    Binding="{Binding animalGenus, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Genus"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="birdSpecies"
+                                    Binding="{Binding animalSpecies, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalSpecies"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Add note" Click="BirdAdd_Click"/>
+                            <MenuItem Header="Delete note" Click="BirdDelete_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Mammals" Style="{StaticResource TabControlTextStyle}">
+                <DataGrid x:Name="MammalDataGrid"
+                          CanUserAddRows="False"
+                          ItemsSource="{Binding}"
+                          AutoGenerateColumns="False"
+                          Background="#FFC4E3FF"
+                          BorderBrush="#FFC4E3FF"
+                          CellEditEnding="MammalsEditEnding">
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn x:Name="mammalId"
+                                    Binding="{Binding animalId, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="True">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="mammalClass"
+                                    Binding="{Binding animalClass, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalClass"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="True">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="mammalSquad"
+                                    Binding="{Binding animalSquad, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalSquad"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="mammalFamily"
+                                    Binding="{Binding animalFamily, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalFamily"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="mammalGenus"
+                                    Binding="{Binding animalGenus, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Genus"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="mammalSpecies"
+                                    Binding="{Binding animalSpecies, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="AnimalSpecies"
+                                    HeaderStyle="{StaticResource ColumnTextStyle}"
+                                    IsReadOnly="False">
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Add note" Click="MammalAdd_Click"/>
+                            <MenuItem Header="Delete note" Click="MammalDelete_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </TabItem>
+            
+        </TabControl>
+    </Grid>
+</Window>
