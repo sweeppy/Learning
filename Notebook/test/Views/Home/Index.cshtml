@@ -1,0 +1,54 @@
+﻿@using Notebook.Models
+@{
+    ViewData["Title"] = "Main page";
+}
+
+    
+    <h2>Full information about clients:</h2> 
+
+    <table class="table">
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Patronymic</th>
+        <th>PhoneNumber</th>
+        <th>Adress</th>
+        <th>Description</th>
+        @if(User.Identity.IsAuthenticated && User.Identity.Name == "Admin")
+        {
+           <th>Commands</th>
+        }
+        
+    </tr>
+    @{
+        if (Model != null)
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Patronymic</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Address</td>
+                    <td>@item.Description</td>
+
+                    @if (User.Identity.IsAuthenticated && User.Identity.Name == "Admin")
+                    {
+                        <td>
+                            <a class="my-link" asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Edit</a>
+
+
+                            <form asp-controller="Home" asp-action="Delete" method="post" asp-route-id="@item.Id">
+                                <input type="submit" value="Delete" />
+                            </form>
+                        </td>
+                    }
+
+
+                </tr>
+            }
+    }
+</table>
+

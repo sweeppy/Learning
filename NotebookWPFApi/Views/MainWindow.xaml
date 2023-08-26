@@ -1,0 +1,228 @@
+﻿<Window x:Class="NotebookWPFApi.Views.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotebookWPFApi"
+        mc:Ignorable="d"
+        Title="Notebook" MinHeight="850" MinWidth="1300"
+                         MaxHeight="850" MaxWidth="1300">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#FFEBEBFD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl>
+            <TabItem x:Name="fullTI" Header="Full information" PreviewMouseLeftButtonUp="fullTI_PreviewMouseLeftButtonUp_1">
+                <DataGrid x:Name="fullDataGrid" Background="#FFE0E0FB" BorderBrush="#FFEFEEEE"
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                  CellEditEnding="fullDG_EditEndingAsync">
+
+                    <DataGrid.ContextMenu>
+                        <ContextMenu x:Name="fullContextMenu" Visibility="Hidden">
+                            <MenuItem Header="Delete client"
+                                      Click="Delete_Client_FullDG_Click"
+                                      ></MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn x:Name="fullIdTC"
+                                    Binding="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    IsReadOnly="true"/>
+
+                        <DataGridTextColumn x:Name="fulllastNameTC"
+                                    Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Last name"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="fullfirstNameTC"
+                                    Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="First name"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="fullpatronymicTC"
+                                    Binding="{Binding Patronymic, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Patronymic"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="fullphoneNumberTC"
+                                    Binding="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Phone number"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="fulladdressTC"
+                                    Binding="{Binding Address, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Address"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="fulldescriptionTc"
+                                    Binding="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Description"
+                                    IsReadOnly="True"/>
+
+                    </DataGrid.Columns>
+
+
+                </DataGrid>
+            </TabItem>
+
+            <TabItem x:Name="ShortTI" Header="Short onformation"
+                     PreviewMouseLeftButtonUp="FullTI_PreviewMouseLeftButtonUp">
+                
+                <DataGrid x:Name="shortDataGrid" Background="#FFE0E0FB" BorderBrush="{x:Null}"
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                          >
+
+                    <DataGrid.ContextMenu>
+                        <ContextMenu x:Name="shortContextMenu" Visibility="Hidden">
+                            <MenuItem Header="Delete client"
+                                      Click="Delete_Client_ShortDG_Click"
+                                      ></MenuItem>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    
+                    
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn x:Name="shortIdTC"
+                                    Binding="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Id"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="shortlastNameTC"
+                                    Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Last name"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="shortfirstNameTC"
+                                    Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="First name"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="shortpatronymicTC"
+                                    Binding="{Binding Patronymic, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Patronymic"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTextColumn x:Name="shortphoneNumberTC"
+                                    Binding="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Phone number"
+                                    IsReadOnly="True"
+                                    Visibility="Hidden"/>
+
+                        <DataGridTextColumn x:Name="shortaddressTC"
+                                    Binding="{Binding Address, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Address"
+                                    IsReadOnly="True"
+                                    Visibility="Hidden"/>
+
+                        <DataGridTextColumn x:Name="shortDescriptionTc"
+                                    Binding="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                                    Header="Description"
+                                    
+                                    IsReadOnly="True"
+                                    Visibility="Hidden"/>
+
+
+                        <DataGridTemplateColumn Header="" x:Name="shortGetAllInfDGTM">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="All information" FontSize="12" Width="150" Height="20"
+                                    Click="Get_allInformation_Click"></Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="SignInBtn" Grid.Column="1" Margin="10,20,140,750" Click="Sign_in_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="#FFCBF9F9" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Sign in"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="SignUpBtn" Grid.Column="1" Margin="140,20,10,750" Click="Sign_up_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="#FFCBF9F9" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Sign up"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="Update" Grid.Column="1" Margin="10,742,10,28" Click="Update_all_dataGrid_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="#FFCBF9F9" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Update"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="LogOutBtn" Grid.Column="1" Margin="10,673,10,97" Click="Logout_Click"
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="#FFCBF9F9" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Logout"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <TextBlock x:Name="OnlineTB"
+                   Style="{StaticResource TextBlockStyle}" Grid.Column="1"
+                   Margin="0,549,0,0"
+                   VerticalAlignment="Top" Width="240"/>
+
+        <Button x:Name="AddClientBtn" Grid.Column="1" Margin="10,604,10,166" Click="Add_Client_Click"
+                Visibility="Hidden">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="#FFCBF9F9" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="AliceBlue"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Add Client"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+
+</Window>

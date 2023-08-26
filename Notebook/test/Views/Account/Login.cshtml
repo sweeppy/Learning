@@ -1,0 +1,34 @@
+﻿@model Notebook.Authorization.UserLogin
+
+@{
+    ViewData["Title"] = "Sign in";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 well">
+            <h3 class="text-center">Sign in</h3>
+
+            <form asp-action="Login" asp-antiforgery="true">
+                <div asp-validation-summary="ModelOnly" class="text-dandger"></div>
+
+                <input type="hidden" asp-for="ReturnUrl"/>
+
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <input asp-for="LoginProp" class="form-control" placeholder="User name" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <input asp-for="Password" class="form-control" placeholder="Password" />
+                    </div>
+                </div>
+
+
+                <div class="text-center col-xs-12">
+                    <button type="submit" class="btn-sign-in"><span>Sign in</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

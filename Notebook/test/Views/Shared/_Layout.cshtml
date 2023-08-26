@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/test.styles.css" asp-append-version="true" />
+</head>
+<body>
+        <header>
+            
+            <a href="@Url.Action("Index", "Home")" class="logo">Notebook(full)</a>
+            <a href="@Url.Action("Index", "HomeShort")" class="logo">Notebook(short)</a>
+            <nav>
+                <a class="navbar-brand" href="/Account/Login">Sign in</a>
+                <a class="navbar-brand" href="/Account/Registration">Sign up </a>
+                @if(User.Identity.IsAuthenticated)
+            {
+                <a class="navbar-brand">@User.Identity.Name Online</a>
+                <form class="logoutform" method="post" asp-controller="Account" asp-action="Logout" id="logoutform" asp-antiforgery="true">
+                    <input class="logout" type="submit" value="Logout">
+                </form>
+
+                <a href="/Add">Add note</a>
+            }
+            
+            </nav>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+</body>
+</html>

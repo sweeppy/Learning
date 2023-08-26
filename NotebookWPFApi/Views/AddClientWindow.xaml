@@ -1,0 +1,93 @@
+﻿<Window x:Class="NotebookWPFApi.Views.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotebookWPFApi.Views"
+        mc:Ignorable="d"
+        Title="AddClient" Height="400" Width="600">
+
+    <Window.Resources>
+
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="280"/>
+            <Setter Property="Background" Value="#F1F0E8"/>
+        </Style>
+        
+    </Window.Resources>
+    <Grid Background="#96B6C5" ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Last name" Grid.Row="0"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="First name" Grid.Row="1"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Patronymic" Grid.Row="2"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Phone number" Grid.Row="3"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Address" Grid.Row="4"/>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Description" Grid.Row="5"/>
+
+        <TextBox x:Name="lastNameTb" Style="{StaticResource TextBoxStyle}" Grid.Row="0"/>
+        <TextBox x:Name="firstNameTb" Style="{StaticResource TextBoxStyle}" Grid.Row="1"/>
+        <TextBox x:Name="patronymicTb" Style="{StaticResource TextBoxStyle}" Grid.Row="2"/>
+        <TextBox x:Name="phoneNumberTb" Style="{StaticResource TextBoxStyle}" Grid.Row="3"/>
+        <TextBox x:Name="addressTb" Style="{StaticResource TextBoxStyle}" Grid.Row="4"/>
+        <TextBox x:Name="descriptionTb" Style="{StaticResource TextBoxStyle}" Grid.Row="5"/>
+
+
+        <Button x:Name="BtnCancel" Grid.Column="0" Grid.Row="6" Margin="8" Content="Cancel">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="Gray" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="#FFFBF5EB"/>
+                        </Border>
+                        <TextBlock Text="Cancel" Style="{StaticResource TextBlockStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="BtnConfirm" Grid.Column="1" Grid.Row="6" Margin="8" Content="Confirm">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border BorderBrush="Gray" BorderThickness="3" CornerRadius="3">
+                            <Rectangle Fill="#FFFBF5EB"/>
+                        </Border>
+                        <TextBlock Text="Confirm" Style="{StaticResource TextBlockStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+    
+</Window>
