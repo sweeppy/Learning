@@ -1,2 +1,3 @@
-Learning c# 
-start - spring 2021
+Learning c#.
+ 
+Start - spring 2021
