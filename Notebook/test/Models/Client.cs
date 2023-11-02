@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Notebook.Models
+﻿namespace Notebook.Models
 {
     public partial class Client
     {
@@ -20,5 +17,3 @@ namespace Notebook.Models
         public string Description { get; set; }
     }
 }
-
-

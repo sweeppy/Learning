@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Notebook.Authorization;
 using Notebook.Data;
 using System;
@@ -14,7 +13,7 @@ string connection = builder.Configuration.GetConnectionString("DefaultConnection
 
 
 
-builder.Services.AddTransient< DataApi>();
+builder.Services.AddTransient<DataApi>();
 //builder.Services.AddScoped<IClient, ClientData>();
 
 builder.Services.AddIdentity<User, IdentityRole>() // <----

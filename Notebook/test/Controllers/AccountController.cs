@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿    using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Notebook.Authorization;
 using Notebook.Models;
@@ -39,11 +39,7 @@ namespace Notebook.Controllers
                 {
                     if (Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        if (User.Identity.IsAuthenticated)
-                        {
-                            return Redirect(model.ReturnUrl);
-                        }
-                        return Redirect(model.ReturnUrl);
+                            return Redirect(model.ReturnUrl);                
                     }
 
                     return RedirectToAction("Index", "Home");
